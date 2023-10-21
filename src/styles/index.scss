@@ -1,0 +1,31 @@
+@import './_reset.scss';
+@import './var.scss';
+
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: $font-family;
+  font-size: $font-size;
+  margin: 0;
+  background-color: $bg-color;
+  color: $color;
+}
+
+code {
+  font-family: $font-family-code;
+}
+
+a {
+  text-decoration: none;
+  color: initial;
+}
+
+#root {
+  height: 100%;
+}

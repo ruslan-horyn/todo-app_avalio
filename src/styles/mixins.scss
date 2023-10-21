@@ -1,0 +1,112 @@
+@import '../styles//var.scss';
+
+@mixin input {
+  padding: 0.375rem 0.75rem;
+  box-sizing: border-box;
+  border-radius: 0.1875rem;
+  border: 0.0625rem solid $color;
+  background-color: transparent;
+  color: $color;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    font-family: $font-family;
+    color: #a0a0a0;
+  }
+}
+
+@mixin input-checkbox {
+  appearance: none;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+  border: 0.0625rem solid $color;
+  border-radius: 0.1875rem;
+  margin: 0 0.3125rem 0 0;
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    top: 0;
+    left: 0;
+  }
+
+  &::before {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  &::before {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  &:checked::after {
+    position: absolute;
+    width: 0.25rem;
+    height: 0.625rem;
+    border: solid white;
+    border-width: 0 0.125rem 0.125rem 0;
+    transform: translate(90%, 10%) rotate(45deg);
+  }
+}
+
+@mixin button-primary {
+  background-color: $color;
+  color: $bg-color;
+  border-color: $color;
+}
+
+@mixin button-secondary {
+  background-color: $bg-color;
+  color: $color;
+  border-color: $color;
+}
+
+
+@mixin button-base($type: primary) {
+  display: inline-flex;
+  position: relative;
+  padding: 0.375rem 12px;
+  vertical-align: middle;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  transition-property: background-color, color, border-color;
+  border: 0.0625rem solid;
+  border-radius: 0.1875rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:disabled {
+    cursor: default;
+    pointer-events: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  @if $type ==primary {
+    @include button-primary;
+
+    &:hover {
+      @include button-secondary;
+    }
+  }
+
+  @if $type ==secondary {
+    @include button-secondary;
+
+    &:hover {
+      @include button-primary;
+    }
+  }
+}
