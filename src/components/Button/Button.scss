@@ -1,0 +1,11 @@
+@import '../../styles/var.scss';
+@import '../../styles/mixins.scss';
+
+.button {
+
+  @include button-base;
+
+  &-secondary {
+    @include button-base(secondary);
+  }
+}
