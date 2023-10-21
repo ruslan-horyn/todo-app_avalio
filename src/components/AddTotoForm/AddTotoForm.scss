@@ -1,0 +1,20 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/var.scss';
+
+.add-toto-container {
+  width: 100%;
+}
+
+.add-todo {
+  &__form {
+    display: flex;
+    width: 100%;
+    gap: 0.3125rem;
+  }
+
+  &__input {
+    flex: 1;
+  }
+
+  &__button {}
+}
