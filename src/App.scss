@@ -1,0 +1,18 @@
+@import 'styles/var.scss';
+
+.app {
+  margin: 0 auto;
+  padding: 2rem;
+  max-width: clamp(20rem, 100%, 45rem);
+  height: calc(100% - 4rem);
+
+  &__title {
+    text-align: center;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+
+    @media (max-width: 768px) {
+      font-size: 3rem;
+    }
+  }
+}
